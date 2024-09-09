@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZSM Consultants</title>
+    <title>ZSM Consultants - Innovative Business Solutions</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -14,12 +14,12 @@
     />
     <style>
       :root {
-        --primary-color: #2c3e50;
-        --secondary-color: #34495e;
-        --accent-color: #3498db;
-        --background-color: #ecf0f1;
-        --text-color: #2d3748;
-        --light-text-color: #718096;
+        --primary-color: #1a237e;
+        --secondary-color: #283593;
+        --accent-color: #00bcd4;
+        --background-color: #f5f5f5;
+        --text-color: #333;
+        --light-text-color: #666;
       }
 
       body {
@@ -40,7 +40,32 @@
         color: white;
         text-align: center;
         padding: 4rem 0;
-        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 60%
+        );
+        animation: rotate 20s linear infinite;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
 
       header h1 {
@@ -48,6 +73,7 @@
         margin: 0;
         font-weight: 600;
         letter-spacing: 1px;
+        position: relative;
       }
 
       header p {
@@ -55,6 +81,7 @@
         margin-top: 15px;
         font-weight: 300;
         opacity: 0.9;
+        position: relative;
       }
 
       main {
@@ -95,6 +122,27 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         transition: all 0.3s ease-in-out;
         text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service::before {
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 100%
+        );
+        transition: all 0.5s ease-in-out;
+      }
+
+      .service:hover::before {
+        top: 0;
       }
 
       .service:hover {
@@ -106,6 +154,11 @@
         font-size: 3rem;
         color: var(--accent-color);
         margin-bottom: 1.5rem;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .service:hover i {
+        transform: scale(1.1);
       }
 
       .service h3 {
@@ -140,6 +193,35 @@
         border-radius: 15px;
         margin-bottom: 4rem;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .why-choose-us::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(0, 188, 212, 0.05) 0%,
+          transparent 70%
+        );
+        animation: pulse 10s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
       }
 
       .why-choose-us ul {
@@ -155,6 +237,12 @@
         display: flex;
         align-items: center;
         color: var(--light-text-color);
+        transition: all 0.3s ease-in-out;
+      }
+
+      .why-choose-us ul li:hover {
+        transform: translateX(10px);
+        color: var(--primary-color);
       }
 
       .why-choose-us ul li:before {
@@ -180,7 +268,7 @@
         overflow: hidden;
       }
 
-      .contact:before {
+      .contact::before {
         content: "";
         position: absolute;
         top: -50%;
@@ -192,6 +280,7 @@
           rgba(255, 255, 255, 0.1) 0%,
           transparent 70%
         );
+        animation: rotate 30s linear infinite;
       }
 
       .contact h2 {
@@ -213,11 +302,41 @@
         color: var(--accent-color);
         text-decoration: none;
         font-weight: 500;
-        transition: color 0.3s ease;
+        transition: all 0.3s ease-in-out;
       }
 
       .contact a:hover {
         color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--accent-color);
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .scroll-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .scroll-to-top:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-5px);
       }
 
       @media (max-width: 992px) {
@@ -256,7 +375,7 @@
   <body>
     <header>
       <h1>ZSM Consultants</h1>
-      <p>Professional Business & Consultancy Solutions</p>
+      <p>Innovative Business & Consultancy Solutions</p>
     </header>
 
     <main>
@@ -321,5 +440,56 @@
         <p><em>ZSM Consultants: Your Partner in Business Excellence</em></p>
       </section>
     </main>
+
+    <div class="scroll-to-top">
+      <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+      // Scroll to top functionality
+      const scrollToTopButton = document.querySelector(".scroll-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          scrollToTopButton.classList.add("visible");
+        } else {
+          scrollToTopButton.classList.remove("visible");
+        }
+      });
+
+      scrollToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Add animation to services on scroll
+      const services = document.querySelectorAll(".service");
+
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      services.forEach((service) => {
+        service.style.opacity = "0";
+        service.style.transform = "translateY(50px)";
+        service.style.transition =
+          "opacity 0.5s ease-out, transform 0.5s ease-out";
+        observer.observe(service);
+      });
+    </script>
   </body>
 </html>
