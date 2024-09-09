@@ -6,74 +6,96 @@
     <title>
       ZSM Consultants - Professional Business & Consultancy Solutions
     </title>
-    <!-- Link to Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
     />
     <style>
+      :root {
+        --primary-color: #6c63ff;
+        --secondary-color: #3f3d56;
+        --accent-color: #f9a826;
+        --background-color: #f6f8fa;
+        --text-color: #2d3748;
+      }
+
       body {
-        font-family: "Roboto", sans-serif;
+        font-family: "Poppins", sans-serif;
         line-height: 1.7;
-        color: #333;
+        color: var(--text-color);
         margin: 0;
         padding: 0;
-        background-color: #f8f9fa;
+        background-color: var(--background-color);
       }
 
       header {
-        background-color: #0077b6;
+        background-color: var(--primary-color);
         color: white;
         text-align: center;
-        padding: 2rem 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 3rem 0;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
       }
 
       header h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
         margin: 0;
+        font-weight: 600;
       }
 
       header p {
         font-size: 1.2rem;
         margin-top: 10px;
+        font-weight: 300;
       }
 
       main {
-        padding: 2rem 1rem;
-        max-width: 1100px;
+        padding: 3rem 1rem;
+        max-width: 1200px;
         margin: 0 auto;
       }
 
       h2 {
-        color: #0077b6;
-        font-size: 2rem;
-        margin-bottom: 1rem;
+        color: var(--secondary-color);
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
       }
 
       .services {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
-        justify-content: space-between;
-        margin-bottom: 3rem;
+        gap: 30px;
+        justify-content: center;
+        margin-bottom: 4rem;
       }
 
       .service {
-        flex-basis: calc(33.333% - 20px);
+        flex-basis: calc(33.333% - 30px);
         background-color: white;
-        padding: 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease-in-out;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+        text-align: center;
       }
 
       .service:hover {
         transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .service i {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
       }
 
       .service h3 {
-        color: #0077b6;
+        color: var(--secondary-color);
         font-size: 1.5rem;
         margin-bottom: 1rem;
       }
@@ -81,6 +103,7 @@
       .service ul {
         list-style: none;
         padding: 0;
+        text-align: left;
       }
 
       .service ul li {
@@ -88,34 +111,73 @@
         font-size: 1rem;
       }
 
+      .service ul li:before {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: var(--accent-color);
+        margin-right: 10px;
+      }
+
       .why-choose-us {
-        background-color: #e9f5f8;
-        padding: 2rem;
-        border-radius: 8px;
-        margin-bottom: 3rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        background-color: white;
+        padding: 3rem;
+        border-radius: 15px;
+        margin-bottom: 4rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
 
       .why-choose-us ul {
         list-style: none;
         padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
       }
 
       .why-choose-us ul li {
-        margin-bottom: 0.8rem;
         font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .why-choose-us ul li:before {
+        content: "\f058";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: var(--primary-color);
+        margin-right: 10px;
+        font-size: 1.5rem;
       }
 
       .contact {
         text-align: center;
-        background-color: #0077b6;
+        background-color: var(--secondary-color);
         color: white;
-        padding: 2.5rem 1rem;
-        border-radius: 8px;
+        padding: 3rem 1rem;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact:before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          var(--primary-color) 0%,
+          transparent 70%
+        );
+        opacity: 0.1;
       }
 
       .contact h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+        color: white;
       }
 
       .contact p {
@@ -123,17 +185,16 @@
       }
 
       .contact a {
-        color: #ffdd57;
+        color: var(--accent-color);
         text-decoration: none;
         font-weight: 500;
         transition: color 0.3s ease;
       }
 
       .contact a:hover {
-        color: #fff;
+        color: white;
       }
 
-      /* Media Queries for responsive design */
       @media (max-width: 768px) {
         .services {
           flex-direction: column;
@@ -144,7 +205,7 @@
         }
 
         header h1 {
-          font-size: 2rem;
+          font-size: 2.5rem;
         }
 
         header p {
@@ -152,11 +213,11 @@
         }
 
         h2 {
-          font-size: 1.8rem;
+          font-size: 2rem;
         }
 
         .contact h2 {
-          font-size: 1.8rem;
+          font-size: 2rem;
         }
       }
     </style>
@@ -169,14 +230,12 @@
 
     <main>
       <section>
-        <h2>
-          Empowering businesses with expert solutions in Accounting, Taxation,
-          HR, Legal, and IT
-        </h2>
+        <h2>Empowering businesses with expert solutions</h2>
       </section>
 
       <section class="services">
         <div class="service">
+          <i class="fas fa-chart-line"></i>
           <h3>Financial Services</h3>
           <ul>
             <li>Financial Accounting & Reporting</li>
@@ -184,6 +243,7 @@
           </ul>
         </div>
         <div class="service">
+          <i class="fas fa-users"></i>
           <h3>Human Resources</h3>
           <ul>
             <li>HR Management & Recruitment</li>
@@ -191,6 +251,7 @@
           </ul>
         </div>
         <div class="service">
+          <i class="fas fa-balance-scale"></i>
           <h3>Legal & IT</h3>
           <ul>
             <li>Legal Advisory & Documentation</li>
@@ -206,9 +267,6 @@
           <li>Tailored business solutions</li>
           <li>Commitment to accuracy</li>
           <li>Focus on client success</li>
-        </ul>
-        <h3>We Enable You To:</h3>
-        <ul>
           <li>Streamline operations</li>
           <li>Ensure regulatory compliance</li>
           <li>Focus on core business growth</li>
@@ -219,16 +277,16 @@
       <section class="contact">
         <h2>Contact Us Today for a Free Consultation</h2>
         <p>
-          Email:
+          <i class="fas fa-envelope"></i> Email:
           <a href="mailto:info@zsmconsultants.com">info@zsmconsultants.com</a>
         </p>
         <p>
-          LinkedIn:
+          <i class="fab fa-linkedin"></i> LinkedIn:
           <a href="https://www.linkedin.com/company/zsmconsultants"
             >zsmconsultants</a
           >
         </p>
-        <p>Phone: +92 346 2780821</p>
+        <p><i class="fas fa-phone"></i> Phone: +92 346 2780821</p>
         <p><em>ZSM Consultants: Your Partner in Business Excellence</em></p>
       </section>
     </main>
