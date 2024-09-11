@@ -3,384 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZSM Consultants - Innovative Business Solutions</title>
+    <title>ZSM Consultants - Innovative Global Business Solutions</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --primary-color: #1a237e;
-        --secondary-color: #283593;
-        --accent-color: #00bcd4;
-        --background-color: #f5f5f5;
-        --text-color: #333;
-        --light-text-color: #666;
-      }
-
-      body {
-        font-family: "Poppins", sans-serif;
-        line-height: 1.7;
-        color: var(--text-color);
-        margin: 0;
-        padding: 0;
-        background-color: var(--background-color);
-      }
-
-      header {
-        background: linear-gradient(
-          135deg,
-          var(--primary-color),
-          var(--secondary-color)
-        );
-        color: white;
-        text-align: center;
-        padding: 4rem 0;
-        position: relative;
-        overflow: hidden;
-      }
-
-      header::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.1) 0%,
-          transparent 60%
-        );
-        animation: rotate 20s linear infinite;
-      }
-
-      @keyframes rotate {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      header h1 {
-        font-size: 3.5rem;
-        margin: 0;
-        font-weight: 600;
-        letter-spacing: 1px;
-        position: relative;
-      }
-
-      header p {
-        font-size: 1.3rem;
-        margin-top: 15px;
-        font-weight: 300;
-        opacity: 0.9;
-        position: relative;
-      }
-
-      main {
-        padding: 4rem 1rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      h2 {
-        color: var(--primary-color);
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        text-align: center;
-        position: relative;
-      }
-
-      h2::after {
-        content: "";
-        display: block;
-        width: 50px;
-        height: 3px;
-        background-color: var(--accent-color);
-        margin: 10px auto 0;
-      }
-
-      .services {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        margin-bottom: 4rem;
-      }
-
-      .service {
-        flex: 1;
-        background-color: white;
-        padding: 2rem;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        transition: all 0.3s ease-in-out;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .service::before {
-        content: "";
-        position: absolute;
-        top: -100%;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.1) 0%,
-          transparent 100%
-        );
-        transition: all 0.5s ease-in-out;
-      }
-
-      .service:hover::before {
-        top: 0;
-      }
-
-      .service:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-      }
-
-      .service i {
-        font-size: 3rem;
-        color: var(--accent-color);
-        margin-bottom: 1.5rem;
-        transition: all 0.3s ease-in-out;
-      }
-
-      .service:hover i {
-        transform: scale(1.1);
-      }
-
-      .service h3 {
-        color: var(--primary-color);
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-      }
-
-      .service ul {
-        list-style: none;
-        padding: 0;
-        text-align: left;
-      }
-
-      .service ul li {
-        margin-bottom: 0.7rem;
-        font-size: 1rem;
-        color: var(--light-text-color);
-      }
-
-      .service ul li:before {
-        content: "\f00c";
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        color: var(--accent-color);
-        margin-right: 10px;
-      }
-
-      .why-choose-us {
-        background-color: white;
-        padding: 4rem;
-        border-radius: 15px;
-        margin-bottom: 4rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .why-choose-us::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(
-          circle,
-          rgba(0, 188, 212, 0.05) 0%,
-          transparent 70%
-        );
-        animation: pulse 10s ease-in-out infinite;
-      }
-
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.05);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-
-      .why-choose-us ul {
-        list-style: none;
-        padding: 0;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
-      }
-
-      .why-choose-us ul li {
-        font-size: 1.2rem;
-        display: flex;
-        align-items: center;
-        color: var(--light-text-color);
-        transition: all 0.3s ease-in-out;
-      }
-
-      .why-choose-us ul li:hover {
-        transform: translateX(10px);
-        color: var(--primary-color);
-      }
-
-      .why-choose-us ul li:before {
-        content: "\f058";
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        color: var(--accent-color);
-        margin-right: 15px;
-        font-size: 1.5rem;
-      }
-
-      .contact {
-        text-align: center;
-        background: linear-gradient(
-          135deg,
-          var(--secondary-color),
-          var(--primary-color)
-        );
-        color: white;
-        padding: 4rem 2rem;
-        border-radius: 15px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .contact::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.1) 0%,
-          transparent 70%
-        );
-        animation: rotate 30s linear infinite;
-      }
-
-      .contact h2 {
-        font-size: 2.8rem;
-        color: white;
-        margin-bottom: 2rem;
-      }
-
-      .contact h2::after {
-        background-color: var(--accent-color);
-      }
-
-      .contact p {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-      }
-
-      .contact a {
-        color: var(--accent-color);
-        text-decoration: none;
-        font-weight: 500;
-        transition: all 0.3s ease-in-out;
-      }
-
-      .contact a:hover {
-        color: white;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-      }
-
-      .scroll-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: var(--accent-color);
-        color: white;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.5rem;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .scroll-to-top.visible {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .scroll-to-top:hover {
-        background-color: var(--primary-color);
-        transform: translateY(-5px);
-      }
-
-      @media (max-width: 992px) {
-        .services {
-          flex-direction: column;
-        }
-
-        .service {
-          margin-bottom: 20px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        header h1 {
-          font-size: 2.8rem;
-        }
-
-        header p {
-          font-size: 1.1rem;
-        }
-
-        h2 {
-          font-size: 2.2rem;
-        }
-
-        .contact h2 {
-          font-size: 2.2rem;
-        }
-
-        .why-choose-us {
-          padding: 2rem;
-        }
-      }
-    </style>
+    <!-- Import the external CSS file -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
       <h1>ZSM Consultants</h1>
-      <p>Innovative Business & Consultancy Solutions</p>
+      <p>Innovative Global Business Solutions for Tomorrow's Challenges</p>
+      <a href="#contact" class="cta-button">Get a Free Consultation</a>
     </header>
 
     <main>
       <section>
-        <h2>Empowering businesses with expert solutions</h2>
+        <h2>Empowering Businesses Worldwide</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem">
+          At ZSM Consultants, we deliver cutting-edge solutions tailored to your
+          unique business needs. Our global expertise helps you navigate complex
+          challenges and seize new opportunities in the ever-evolving business
+          landscape.
+        </p>
       </section>
 
       <section class="services">
@@ -388,43 +38,59 @@
           <i class="fas fa-chart-line"></i>
           <h3>Financial Services</h3>
           <ul>
-            <li>Financial Accounting & Reporting</li>
-            <li>Tax Planning & Compliance</li>
+            <li>International Financial Reporting</li>
+            <li>Cross-border Tax Planning</li>
+            <li>Global Investment Strategies</li>
+            <li>Risk Management</li>
           </ul>
         </div>
         <div class="service">
           <i class="fas fa-users"></i>
           <h3>Human Resources</h3>
           <ul>
-            <li>HR Management & Recruitment</li>
-            <li>Payroll Processing</li>
+            <li>Global HR Management</li>
+            <li>International Recruitment</li>
+            <li>Multi-country Payroll Solutions</li>
+            <li>Employee Development Programs</li>
           </ul>
         </div>
         <div class="service">
           <i class="fas fa-balance-scale"></i>
           <h3>Legal & IT</h3>
           <ul>
-            <li>Legal Advisory & Documentation</li>
-            <li>IT Support & ERP Solutions</li>
+            <li>International Legal Advisory</li>
+            <li>Global Compliance Management</li>
+            <li>Cloud-based ERP Solutions</li>
+            <li>Cybersecurity Consulting</li>
           </ul>
         </div>
       </section>
 
+      <section class="global-presence">
+        <h2>Our Global Reach</h2>
+        <p>
+          With a strong presence in Asia, Europe, and beyond, ZSM Consultants
+          offers tailored solutions to businesses worldwide. Our team of experts
+          brings local knowledge and global expertise to every project, ensuring
+          your success in the international marketplace.
+        </p>
+      </section>
+
       <section class="why-choose-us">
-        <h2>Why Choose Us?</h2>
+        <h2>Why Choose ZSM Consultants?</h2>
         <ul>
-          <li>Experienced professionals</li>
-          <li>Tailored business solutions</li>
-          <li>Commitment to accuracy</li>
-          <li>Focus on client success</li>
-          <li>Streamline operations</li>
-          <li>Ensure regulatory compliance</li>
-          <li>Focus on core business growth</li>
-          <li>Boost overall efficiency</li>
+          <li>Experienced international professionals</li>
+          <li>Tailored global business solutions</li>
+          <li>Commitment to accuracy and compliance</li>
+          <li>Focus on client success across borders</li>
+          <li>Streamline global operations</li>
+          <li>Ensure international regulatory compliance</li>
+          <li>Drive cross-border business growth</li>
+          <li>Boost overall efficiency in multiple markets</li>
         </ul>
       </section>
 
-      <section class="contact">
+      <section id="contact" class="contact">
         <h2>Contact Us Today for a Free Consultation</h2>
         <p>
           <i class="fas fa-envelope"></i> Email:
@@ -437,7 +103,9 @@
           >
         </p>
         <p><i class="fas fa-phone"></i> Phone: +92 346 2780821</p>
-        <p><em>ZSM Consultants: Your Partner in Business Excellence</em></p>
+        <p>
+          <em>ZSM Consultants: Your Global Partner in Business Excellence</em>
+        </p>
       </section>
     </main>
 
