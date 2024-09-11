@@ -1,10 +1,10 @@
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color: #34495e;
-  --accent-color: #3498db;
-  --background-color: #ecf0f1;
-  --text-color: #333;
-  --light-text-color: #666;
+  --primary-color: #2d3a8c; /* Deep blue for trust and professionalism */
+  --secondary-color: #3ebd93; /* Teal for growth and balance */
+  --accent-color: #ffa34d; /* Warm orange for energy and creativity */
+  --background-color: #f7f7ff; /* Light lavender for a fresh, clean look */
+  --text-color: #2d3a8c; /* Matching primary color for cohesive design */
+  --light-text-color: #6b7280; /* Subtle gray for secondary text */
 }
 
 body {
@@ -103,7 +103,7 @@ header p {
 }
 
 .cta-button:hover {
-  background-color: #2980b9;
+  background-color: #ff8c1a;
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -144,7 +144,7 @@ h2::after {
   background-color: white;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(45, 58, 140, 0.1);
   transition: all 0.3s ease-in-out;
   text-align: center;
   position: relative;
@@ -161,7 +161,7 @@ h2::after {
   height: 100%;
   background: linear-gradient(
     135deg,
-    var(--accent-color),
+    var(--secondary-color),
     var(--primary-color)
   );
   opacity: 0;
@@ -175,12 +175,12 @@ h2::after {
 
 .service:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 40px rgba(45, 58, 140, 0.2);
 }
 
 .service i {
   font-size: 3rem;
-  color: var(--accent-color);
+  color: var(--secondary-color);
   margin-bottom: 1.5rem;
   transition: all 0.3s ease-in-out;
   position: relative;
@@ -246,7 +246,7 @@ h2::after {
   padding: 4rem;
   border-radius: 15px;
   margin-bottom: 4rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(45, 58, 140, 0.1);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -261,7 +261,7 @@ h2::after {
   height: 200%;
   background: radial-gradient(
     circle,
-    rgba(52, 152, 219, 0.1) 0%,
+    rgba(62, 189, 147, 0.1) 0%,
     transparent 70%
   );
   animation: pulse 15s ease-in-out infinite;
@@ -305,7 +305,7 @@ h2::after {
   padding: 4rem;
   border-radius: 15px;
   margin-bottom: 4rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(45, 58, 140, 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -319,7 +319,7 @@ h2::after {
   height: 200%;
   background: radial-gradient(
     circle,
-    rgba(52, 152, 219, 0.05) 0%,
+    rgba(255, 163, 77, 0.05) 0%,
     transparent 70%
   );
   animation: pulse 10s ease-in-out infinite;
