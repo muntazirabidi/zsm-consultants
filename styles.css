@@ -1,19 +1,37 @@
+/* Reset and normalize (consider linking to a CDN version in your HTML) */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+
 :root {
-  --primary-color: #2d3a8c; /* Deep blue for trust and professionalism */
-  --secondary-color: #3ebd93; /* Teal for growth and balance */
-  --accent-color: #ffa34d; /* Warm orange for energy and creativity */
-  --background-color: #f7f7ff; /* Light lavender for a fresh, clean look */
-  --text-color: #2d3a8c; /* Matching primary color for cohesive design */
-  --light-text-color: #6b7280; /* Subtle gray for secondary text */
+  --primary-color: #2d3a8c;
+  --secondary-color: #3ebd93;
+  --accent-color: #ffa34d;
+  --background-color: #f7f7ff;
+  --text-color: #2d3a8c;
+  --light-text-color: #6b7280;
+  --font-size-base: 16px;
+}
+
+html {
+  font-size: var(--font-size-base);
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
   line-height: 1.7;
   color: var(--text-color);
   margin: 0;
   padding: 0;
   background-color: var(--background-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 header {
@@ -24,7 +42,7 @@ header {
   );
   color: white;
   text-align: center;
-  padding: 6rem 0;
+  padding: 6rem 1rem;
   position: relative;
   overflow: hidden;
 }
@@ -51,8 +69,8 @@ header::before {
 }
 
 header h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 4.5rem;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 3rem;
   margin: 0;
   font-weight: 700;
   letter-spacing: 2px;
@@ -61,8 +79,8 @@ header h1 {
 }
 
 header p {
-  font-size: 1.5rem;
-  margin-top: 15px;
+  font-size: 1.25rem;
+  margin-top: 1rem;
   font-weight: 300;
   opacity: 0.9;
   position: relative;
@@ -72,11 +90,11 @@ header p {
   display: inline-block;
   background-color: var(--accent-color);
   color: white;
-  padding: 12px 24px;
+  padding: 0.75rem 1.5rem;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
-  margin-top: 20px;
+  margin-top: 1.25rem;
   transition: all 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
@@ -115,7 +133,7 @@ main {
 }
 
 h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", Georgia, serif;
   color: var(--primary-color);
   font-size: 2.5rem;
   margin-bottom: 2rem;
@@ -134,13 +152,14 @@ h2::after {
 
 .services {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 4rem;
+  margin: -10px;
 }
 
 .service {
-  flex: 1;
+  flex: 0 1 calc(33.333% - 20px);
+  margin: 10px;
   background-color: white;
   padding: 2rem;
   border-radius: 15px;
@@ -149,7 +168,6 @@ h2::after {
   text-align: center;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
 }
 
 .service::before {
@@ -230,7 +248,7 @@ h2::after {
 
 .service ul li:before {
   content: "\f00c";
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Free", sans-serif;
   font-weight: 900;
   color: var(--accent-color);
   margin-right: 10px;
@@ -350,7 +368,7 @@ h2::after {
 
 .why-choose-us ul li:before {
   content: "\f058";
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Free", sans-serif;
   font-weight: 900;
   color: var(--accent-color);
   position: absolute;
@@ -445,33 +463,55 @@ h2::after {
 
 @media (max-width: 992px) {
   .services {
-    flex-direction: column;
+    justify-content: center;
   }
 
   .service {
-    margin-bottom: 20px;
+    flex: 0 1 calc(50% - 20px);
   }
 }
 
 @media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
   header h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   header p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .contact h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .why-choose-us,
   .global-presence {
     padding: 2rem;
+  }
+
+  .service {
+    flex: 0 1 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+
+  header {
+    padding: 4rem 1rem;
+  }
+
+  .cta-button {
+    padding: 0.6rem 1.2rem;
   }
 }
