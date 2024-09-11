@@ -1,4 +1,4 @@
-/* Reset and normalize (consider linking to a CDN version in your HTML) */
+/* Reset and normalize */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
 
 :root {
@@ -8,6 +8,7 @@
   --background-color: #f7f7ff;
   --text-color: #2d3a8c;
   --light-text-color: #6b7280;
+  --white: #ffffff;
   --font-size-base: 16px;
 }
 
@@ -40,7 +41,7 @@ header {
     var(--primary-color),
     var(--secondary-color)
   );
-  color: white;
+  color: var(--white);
   text-align: center;
   padding: 6rem 1rem;
   position: relative;
@@ -86,46 +87,6 @@ header p {
   position: relative;
 }
 
-.cta-button {
-  display: inline-block;
-  background-color: var(--accent-color);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: 1.25rem;
-  transition: all 0.3s ease-in-out;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  transition: all 0.5s;
-}
-
-.cta-button:hover::before {
-  left: 100%;
-}
-
-.cta-button:hover {
-  background-color: #ff8c1a;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
 main {
   padding: 4rem 1rem;
   max-width: 1200px;
@@ -151,23 +112,24 @@ h2::after {
 }
 
 .services {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: -10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
 .service {
-  flex: 0 1 calc(33.333% - 20px);
-  margin: 10px;
-  background-color: white;
+  background-color: var(--white);
   padding: 2rem;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 10px 30px rgba(45, 58, 140, 0.1);
   transition: all 0.3s ease-in-out;
   text-align: center;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .service::before {
@@ -185,10 +147,11 @@ h2::after {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   z-index: 1;
+  border-radius: 20px;
 }
 
 .service:hover::before {
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .service:hover {
@@ -197,7 +160,7 @@ h2::after {
 }
 
 .service i {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: var(--secondary-color);
   margin-bottom: 1.5rem;
   transition: all 0.3s ease-in-out;
@@ -206,20 +169,21 @@ h2::after {
 }
 
 .service:hover i {
-  color: white;
+  color: var(--white);
+  transform: scale(1.1);
 }
 
 .service h3 {
   color: var(--primary-color);
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
   position: relative;
   z-index: 2;
   transition: all 0.3s ease-in-out;
 }
 
 .service:hover h3 {
-  color: white;
+  color: var(--white);
 }
 
 .service ul {
@@ -232,18 +196,20 @@ h2::after {
 }
 
 .service:hover ul {
-  color: white;
+  color: var(--white);
 }
 
 .service ul li {
-  margin-bottom: 0.7rem;
-  font-size: 1rem;
+  margin-bottom: 0.9rem;
+  font-size: 1.1rem;
   color: var(--light-text-color);
   transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
 }
 
 .service:hover ul li {
-  color: white;
+  color: var(--white);
 }
 
 .service ul li:before {
@@ -253,16 +219,18 @@ h2::after {
   color: var(--accent-color);
   margin-right: 10px;
   transition: all 0.3s ease-in-out;
+  font-size: 1rem;
 }
 
 .service:hover ul li:before {
-  color: white;
+  color: var(--accent-color);
 }
 
 .global-presence {
-  background-color: white;
+  background-color: var(--white);
   padding: 4rem;
-  border-radius: 15px;
+  border-radius: 10px;
+  margin-top: 2rem; /* Added margin-top */
   margin-bottom: 4rem;
   box-shadow: 0 10px 30px rgba(45, 58, 140, 0.1);
   text-align: center;
@@ -319,9 +287,9 @@ h2::after {
 }
 
 .why-choose-us {
-  background-color: white;
+  background-color: var(--white);
   padding: 4rem;
-  border-radius: 15px;
+  border-radius: 10px;
   margin-bottom: 4rem;
   box-shadow: 0 10px 30px rgba(45, 58, 140, 0.1);
   position: relative;
@@ -358,12 +326,15 @@ h2::after {
   color: var(--light-text-color);
   transition: all 0.3s ease-in-out;
   position: relative;
-  padding-left: 30px;
+  padding: 1rem;
+  background-color: rgba(45, 58, 140, 0.05);
+  border-radius: 10px;
 }
 
 .why-choose-us ul li:hover {
   transform: translateX(10px);
   color: var(--primary-color);
+  background-color: rgba(45, 58, 140, 0.1);
 }
 
 .why-choose-us ul li:before {
@@ -371,9 +342,8 @@ h2::after {
   font-family: "Font Awesome 5 Free", sans-serif;
   font-weight: 900;
   color: var(--accent-color);
-  position: absolute;
-  left: 0;
-  font-size: 1.5rem;
+  margin-right: 10px;
+  font-size: 1.2rem;
 }
 
 .contact {
@@ -383,9 +353,9 @@ h2::after {
     var(--secondary-color),
     var(--primary-color)
   );
-  color: white;
+  color: var(--white);
   padding: 4rem 2rem;
-  border-radius: 15px;
+  border-radius: 10px;
   position: relative;
   overflow: hidden;
 }
@@ -407,7 +377,7 @@ h2::after {
 
 .contact h2 {
   font-size: 2.8rem;
-  color: white;
+  color: var(--white);
   margin-bottom: 2rem;
 }
 
@@ -428,46 +398,13 @@ h2::after {
 }
 
 .contact a:hover {
-  color: white;
+  color: var(--white);
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.scroll-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: var(--accent-color);
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.scroll-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.scroll-to-top:hover {
-  background-color: var(--primary-color);
-  transform: translateY(-5px);
 }
 
 @media (max-width: 992px) {
   .services {
-    justify-content: center;
-  }
-
-  .service {
-    flex: 0 1 calc(50% - 20px);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
 
@@ -496,10 +433,6 @@ h2::after {
   .global-presence {
     padding: 2rem;
   }
-
-  .service {
-    flex: 0 1 100%;
-  }
 }
 
 @media (max-width: 480px) {
@@ -511,7 +444,15 @@ h2::after {
     padding: 4rem 1rem;
   }
 
-  .cta-button {
-    padding: 0.6rem 1.2rem;
+  main {
+    padding: 2rem 1rem;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  .why-choose-us ul {
+    grid-template-columns: 1fr;
   }
 }
